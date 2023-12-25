@@ -1,0 +1,238 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  background: #0f0f0f;
+}
+
+
+
+/* Main content styling */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  margin-top: 150px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  background: rgba(30, 30, 30, 0.508);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  flex: 1;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+
+h1 {
+  color: #dddddd;
+  /* Darker text for the title and subtitle */
+}
+
+h2 {
+  color: #fff;
+  /* White color for headings */
+}
+
+ul {
+  color: #fff;
+}
+
+p {
+  color: #e6e6e6;
+  /* Darker text for better contrast */
+  line-height: 1.6;
+  /* Improve line spacing for readability */
+}
+
+.gallery {
+  display: flex;
+  /* Flex container for gallery items */
+  justify-content: space-around;
+  /* Evenly space the items */
+  flex-wrap: wrap;
+  /* Allow wrapping to the next line */
+}
+
+.project-item {
+  width: 200px;
+  /* Fixed width for each project item */
+  height: 300px;
+  /* Fixed height for each project item */
+  margin: 10px;
+  /* Margin around items */
+  background-color: #b7b7b7;
+  /* Placeholder background */
+  color: #fff;
+  /* Text color */
+  display: flex;
+  /* To center content */
+  align-items: center;
+  /* Align items vertically */
+  justify-content: center;
+  /* Align items horizontally */
+  text-align: center;
+  /* Ensure text is centered */
+  border-radius: 15px;
+  /* Rounded corners for a smoother look */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth transition for hover effect */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* Add a subtle shadow for depth */
+  overflow: hidden;
+  /* Hide overflowing content */
+  position: relative;
+  /* Use relative positioning for pseudo-elements */
+}
+
+.project-item img {
+  max-width: 100%;
+  /* Ensure the image doesn't exceed the container width */
+  max-height: 100%;
+  /* Ensure the image doesn't exceed the container height */
+  object-fit: cover;
+  /* Crop the image to fit the container while preserving aspect ratio */
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+  /* Slightly enlarge items on hover */
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  /* Increase shadow on hover */
+}
+
+.project-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('path_to_your_image.jpg');
+  /* Add a semi-transparent background overlay with an image */
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+  /* Smooth transition for overlay */
+}
+
+.project-item:hover::before {
+  opacity: 1;
+  /* Show the overlay on hover */
+}
+
+.project-item p {
+  margin: 10px 0;
+  /* Add margin to separate text from image */
+  padding: 5px;
+  /* Add padding to the text for better visibility */
+  background-color: rgba(71, 71, 71, 0.5);
+  /* Semi-transparent background for text */
+  color: #ffffff;
+  overflow: hidden;
+  /* Prevent text overflow */
+  max-width: 90%;
+}
+
+
+.project-item:hover {
+  transform: scale(1.08);
+  /* Slightly enlarge items on hover */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  color: #fff;
+  background-color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+  background-color: #007bff;
+  transform: translateY(-5px);
+}
+
+#scene-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+section {
+  margin: 20px 0;
+  /* Spacing between sections */
+  padding: 20px;
+  /* Padding for content within sections */
+  background: rgba(193, 193, 193, 0.548);
+  /* Slight background for separation */
+  border-radius: 10px;
+  /* Rounded corners for a smooth look */
+}
+
+/* Container for sidebar and content */
+.container {
+  display: flex;
+  /* Use flexbox for layout */
+  justify-content: center;
+  /* Center the content horizontally */
+  align-items: center;
+  /* Center the content vertically */
+  min-height: 100vh;
+  /* Ensure it takes at least the full viewport height */
+  padding: 20px;
+  /* Add some padding */
+}
+
+/* Footer styling */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Add a semi-transparent background */
+  text-align: center;
+  padding: 10px 0;
+  /* Add some padding for better appearance */
+  z-index: 2;
+  /* Set a higher z-index to make the footer appear above the content */
+}
+
+footer p {
+  color: #fff;
+  margin: 5px;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.certification-icon {
+  width: 30px; /* Adjust the width to fit your design */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 5px; /* Add spacing between the icon and text */
+  vertical-align: middle; /* Align the icon vertically with the text */
+}
